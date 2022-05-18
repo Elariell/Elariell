@@ -1,0 +1,412 @@
+$blue: #44667c;
+$orange: #da7e1b;
+$orange-bg: #d8770e;
+$fullfild-header-width: 960px;
+$touch-menu-width: 240px;
+$font-family: "Merriweather", arial, sans-serif;
+
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+
+/*--------------------*/
+.hidden-touch {
+  display: list-item;
+}
+
+// body {
+//   border-color: rgb(237, 243, 249);
+// }
+.header {
+  position: relative;
+  width: $fullfild-header-width;
+  margin: 0 auto;
+  font-family: #{$font-family};
+  .logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    .logo {
+      background-image: url(../imgs/ACAD_logo_200px.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 200px;
+      height: 91px;
+    }
+  }
+  .navbar {
+    .info-menu {
+      background-color: $blue;
+
+      .info-menu-container {
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        margin-right: 40px;
+        .menu-elem {
+          // margin: 3px 0;
+
+          .menu-link {
+            display: block; //
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 300;
+            font-stretch: 100%;
+            line-height: 2; //
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .main-menu {
+      .main-menu-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0px 4px 0px;
+        .menu-elem {
+          .menu-link {
+            display: flex;
+            line-height: 2.6;
+            vertical-align: middle;
+            padding-left: 10px;
+            white-space: nowrap;
+
+            .angle {
+              // background-color: $orange;
+              line-height: 1.6;
+              padding: 7px 7px;
+            }
+          }
+          &.dropdown {
+            position: relative;
+            // margin-bottom: 20px;
+
+            .dropdown-menu {
+              // display: inline-block;
+              // position: absolute;
+
+              white-space: nowrap;
+              opacity: 0;
+              visibility: hidden;
+              pointer-events: none;
+              &.open {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0px, 0px);
+                pointer-events: all;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav-mobile {
+    display: none;
+    .burger-icon {
+      display: none;
+    }
+  }
+}
+
+@mixin burger {
+  position: absolute;
+  left: 0;
+  height: 10%;
+  width: 100%;
+  transition: all 0.5s ease 0.1s;
+  background-color: #fff;
+}
+
+.logo-mobile {
+  margin: auto;
+  width: 66px;
+  height: 25px;
+  background-image: url(../imgs/ACAD_logo_Small_Reverse_25px_mobile.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.seach-form {
+  z-index: 10;
+  position: absolute;
+  right: 1%;
+  top: -39%;
+  .seach-text-field {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0px, 0px);
+    transition: all 1s ease 0s;
+    width: 400px;
+    height: 80px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0px, 100px);
+    }
+  }
+  .icon {
+    display: flex;
+    justify-content: end;
+    color: #fff;
+  }
+}
+@media (min-width: 993px) {
+  .info-menu-container {
+    .menu-elem {
+      margin: 3px 0;
+      &:hover {
+        background-color: $orange-bg;
+      }
+    }
+  }
+  .main-menu {
+    padding-left: 250px;
+    .menu-elem {
+      margin-top: 15px;
+      .menu-link {
+        color: #000;
+        font-weight: 700;
+        padding: 15px 10px;
+      }
+    }
+    .dropdown-menu {
+      display: inline-block;
+      position: absolute;
+      box-shadow: 2px 2px 5px gray;
+      transform: translate(0px, 10%);
+      top: 80%;
+      right: -20%;
+      background-color: #fff;
+      transition: all 0.5s ease-in-out 0s;
+
+      .dropdowm-item {
+        padding: 15px 20px;
+        background-color: red;
+        .dropdowm-link {
+          // color: $blue;
+          font-weight: 700;
+
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .hidden-touch {
+    display: none;
+  }
+  .logo-container {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: $touch-menu-width;
+    height: 100%;
+    background-color: $blue;
+    transform: translate(-100%, 0px);
+    transition: all 1s ease 0s;
+    overflow: auto;
+    box-shadow: -4px -1px 7px -1px rgba(34, 60, 80, 0.8) inset;
+    &.show {
+      transform: translate(0px, 0px);
+    }
+    .info-menu {
+      order: 2;
+      flex-direction: column;
+      .info-menu-container {
+        margin: 0px !important;
+        flex-direction: column;
+      }
+    }
+    .main-menu {
+      order: 1;
+      padding-left: 0px;
+      .main-menu-container {
+        flex-direction: column;
+        padding: 0px;
+      }
+    }
+    .menu-elem {
+      // display: block;
+      // display: flex;
+      // flex: 1 0 100%;
+      justify-content: start;
+      margin: 0;
+      white-space: nowrap;
+      // &.social {
+      //   display: none !important;
+      // }
+      .menu-link {
+        // background-color: azure;
+        // border: 1px solid black;
+        padding: 0;
+        color: #fff;
+        line-height: 2.6;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+
+        justify-content: space-between;
+
+        .angle {
+          padding: 7px 15px;
+        }
+        // &:hover {
+        //   background-color: $orange;
+        // }
+
+        &.show {
+          background-color: $orange;
+        }
+      }
+
+      &.dropdown {
+        .dropdown-menu {
+          display: none;
+          background-color: inherit;
+          &.open {
+            display: block;
+            .dropdowm-item {
+              padding: 10px 25px;
+
+              .dropdowm-link {
+                color: #fff;
+                font-weight: 700;
+
+                &:hover {
+                  color: $orange;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav-touch {
+    padding: 15px;
+    z-index: 1;
+    display: flex;
+    background-color: $blue;
+    height: 50px;
+    width: 100%;
+    .burger-icon {
+      display: block;
+      position: relative;
+      // top: -15px;
+      width: 16px;
+      height: 13px;
+      cursor: pointer;
+      transform: translate(0px, 0px);
+      transition: all 1s ease 0s;
+      &::before {
+        @include burger;
+        content: "";
+        top: 0;
+      }
+      &::after {
+        @include burger;
+        content: "";
+        bottom: 0;
+        // transform: rotate(45deg);
+      }
+      span {
+        @include burger;
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+      }
+      &::before &::after {
+        content: "";
+      }
+      &.open {
+        transform: translate($touch-menu-width, 0px);
+        &::before {
+          top: 50%;
+          transform: rotate(-45deg) translate(0px, -50%);
+        }
+        &::after {
+          top: 50%;
+          transform: rotate(45deg) translate(0px, -50%);
+        }
+        span {
+          @include burger;
+          top: 50%;
+          transform: scale(0) translate(0px, -50%);
+        }
+      }
+    }
+  }
+}

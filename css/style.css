@@ -1,0 +1,457 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/*--------------------*/
+.hidden-touch {
+  display: list-item;
+}
+
+.header {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  font-family: Merriweather, arial, sans-serif;
+}
+
+.header .logo-container {
+  position: absolute;
+  left: 20px;
+  top: 50px;
+}
+
+.header .logo-container .logo {
+  background-image: url(../imgs/ACAD_logo_200px.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 200px;
+  height: 91px;
+}
+
+.header .navbar .info-menu {
+  background-color: #44667c;
+}
+
+.header .navbar .info-menu .info-menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: 40px;
+}
+
+.header .navbar .info-menu .info-menu-container .menu-elem .menu-link {
+  display: block;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 300;
+  font-stretch: 100%;
+  line-height: 2;
+  color: #fff;
+}
+
+.header .navbar .main-menu .main-menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 0px 4px 0px;
+}
+
+.header .navbar .main-menu .main-menu-container .menu-elem .menu-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 2.6;
+  vertical-align: middle;
+  padding-left: 10px;
+  white-space: nowrap;
+}
+
+.header .navbar .main-menu .main-menu-container .menu-elem .menu-link .angle {
+  line-height: 1.6;
+  padding: 7px 7px;
+}
+
+.header .navbar .main-menu .main-menu-container .menu-elem.dropdown {
+  position: relative;
+}
+
+.header .navbar .main-menu .main-menu-container .menu-elem.dropdown .dropdown-menu {
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.header .navbar .main-menu .main-menu-container .menu-elem.dropdown .dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+.header .nav-mobile {
+  display: none;
+}
+
+.header .nav-mobile .burger-icon {
+  display: none;
+}
+
+.logo-mobile {
+  margin: auto;
+  width: 66px;
+  height: 25px;
+  background-image: url(../imgs/ACAD_logo_Small_Reverse_25px_mobile.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.seach-form {
+  z-index: 10;
+  position: absolute;
+  right: 1%;
+  top: -39%;
+}
+
+.seach-form .seach-text-field {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+  width: 400px;
+  height: 80px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+}
+
+.seach-form .seach-text-field.active {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(0px, 100px);
+          transform: translate(0px, 100px);
+}
+
+.seach-form .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  color: #fff;
+}
+
+@media (min-width: 993px) {
+  .info-menu-container .menu-elem {
+    margin: 3px 0;
+  }
+  .info-menu-container .menu-elem:hover {
+    background-color: #d8770e;
+  }
+  .main-menu {
+    padding-left: 250px;
+  }
+  .main-menu .menu-elem {
+    margin-top: 15px;
+  }
+  .main-menu .menu-elem .menu-link {
+    color: #000;
+    font-weight: 700;
+    padding: 15px 10px;
+  }
+  .main-menu .dropdown-menu {
+    display: inline-block;
+    position: absolute;
+    -webkit-box-shadow: 2px 2px 5px gray;
+            box-shadow: 2px 2px 5px gray;
+    -webkit-transform: translate(0px, 10%);
+            transform: translate(0px, 10%);
+    top: 80%;
+    right: -20%;
+    background-color: #fff;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  .main-menu .dropdown-menu .dropdowm-item {
+    padding: 15px 20px;
+    background-color: red;
+  }
+  .main-menu .dropdown-menu .dropdowm-item .dropdowm-link {
+    font-weight: 700;
+  }
+  .main-menu .dropdown-menu .dropdowm-item .dropdowm-link:hover {
+    color: #da7e1b;
+  }
+}
+
+@media (max-width: 992px) {
+  .hidden-touch {
+    display: none;
+  }
+  .logo-container {
+    display: none;
+  }
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 240px;
+    height: 100%;
+    background-color: #44667c;
+    -webkit-transform: translate(-100%, 0px);
+            transform: translate(-100%, 0px);
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+    overflow: auto;
+    -webkit-box-shadow: -4px -1px 7px -1px rgba(34, 60, 80, 0.8) inset;
+            box-shadow: -4px -1px 7px -1px rgba(34, 60, 80, 0.8) inset;
+  }
+  .navbar.show {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  .navbar .info-menu {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navbar .info-menu .info-menu-container {
+    margin: 0px !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navbar .main-menu {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    padding-left: 0px;
+  }
+  .navbar .main-menu .main-menu-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0px;
+  }
+  .navbar .menu-elem {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .navbar .menu-elem .menu-link {
+    padding: 0;
+    color: #fff;
+    line-height: 2.6;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar .menu-elem .menu-link .angle {
+    padding: 7px 15px;
+  }
+  .navbar .menu-elem .menu-link.show {
+    background-color: #da7e1b;
+  }
+  .navbar .menu-elem.dropdown .dropdown-menu {
+    display: none;
+    background-color: inherit;
+  }
+  .navbar .menu-elem.dropdown .dropdown-menu.open {
+    display: block;
+  }
+  .navbar .menu-elem.dropdown .dropdown-menu.open .dropdowm-item {
+    padding: 10px 25px;
+  }
+  .navbar .menu-elem.dropdown .dropdown-menu.open .dropdowm-item .dropdowm-link {
+    color: #fff;
+    font-weight: 700;
+  }
+  .navbar .menu-elem.dropdown .dropdown-menu.open .dropdowm-item .dropdowm-link:hover {
+    color: #da7e1b;
+  }
+  .nav-touch {
+    padding: 15px;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #44667c;
+    height: 50px;
+    width: 100%;
+  }
+  .nav-touch .burger-icon {
+    display: block;
+    position: relative;
+    width: 16px;
+    height: 13px;
+    cursor: pointer;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+  }
+  .nav-touch .burger-icon::before {
+    position: absolute;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    -webkit-transition: all 0.5s ease 0.1s;
+    transition: all 0.5s ease 0.1s;
+    background-color: #fff;
+    content: "";
+    top: 0;
+  }
+  .nav-touch .burger-icon::after {
+    position: absolute;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    -webkit-transition: all 0.5s ease 0.1s;
+    transition: all 0.5s ease 0.1s;
+    background-color: #fff;
+    content: "";
+    bottom: 0;
+  }
+  .nav-touch .burger-icon span {
+    position: absolute;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    -webkit-transition: all 0.5s ease 0.1s;
+    transition: all 0.5s ease 0.1s;
+    background-color: #fff;
+    top: 50%;
+    -webkit-transform: scale(1) translate(0px, -50%);
+            transform: scale(1) translate(0px, -50%);
+  }
+  .nav-touch .burger-icon::before .nav-touch .burger-icon::after {
+    content: "";
+  }
+  .nav-touch .burger-icon.open {
+    -webkit-transform: translate(240px, 0px);
+            transform: translate(240px, 0px);
+  }
+  .nav-touch .burger-icon.open::before {
+    top: 50%;
+    -webkit-transform: rotate(-45deg) translate(0px, -50%);
+            transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .nav-touch .burger-icon.open::after {
+    top: 50%;
+    -webkit-transform: rotate(45deg) translate(0px, -50%);
+            transform: rotate(45deg) translate(0px, -50%);
+  }
+  .nav-touch .burger-icon.open span {
+    position: absolute;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    -webkit-transition: all 0.5s ease 0.1s;
+    transition: all 0.5s ease 0.1s;
+    background-color: #fff;
+    top: 50%;
+    -webkit-transform: scale(0) translate(0px, -50%);
+            transform: scale(0) translate(0px, -50%);
+  }
+}
